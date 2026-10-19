@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Centro de navegación de las páginas temáticas del sitio SEMTRG.">
+	<title>Inicio | SEMTRG</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/main.js" defer></script>
+</head>
+<body>
+	<a class="visually-hidden-focusable p-3" href="#contenido">Saltar al contenido</a>
+	<header data-site-nav></header>
+
+	<main id="contenido">
+		<section class="portada py-5 py-lg-6">
+			<div class="container py-4">
+				<p class="text-uppercase fw-semibold mb-2">SEMTRG</p>
+				<h1 class="display-5 fw-bold mb-3">Centro de navegación</h1>
+				<p class="lead mb-0">Accede a las páginas temáticas del sitio.</p>
+			</div>
+		</section>
+
+		<section class="container py-5" aria-labelledby="paginas-titulo">
+			<h2 class="titulo-seccion h3 mb-4" id="paginas-titulo">Páginas temáticas</h2>
+			<div class="row g-3" data-topic-list></div>
+		</section>
+	</main>
+
+	<footer class="sitio-footer py-3">
+		<div class="container small">SEMTRG · <span data-year></span></div>
+	</footer>
+</body>
+</html>
