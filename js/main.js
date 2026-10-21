@@ -13,7 +13,7 @@ const paginasTematicas = [
     },
     {
         ruta: "programa-educativo.html",
-        titulo: "Diseño de un programa educativo"
+        titulo: "Metodologías de desarrollo e ingeniería de software para el diseño de un programa educativo"
     },
     {
         ruta: "estrategia-educativa-tic.html",
