@@ -5,7 +5,7 @@ const paginasTematicas = [
     },
     {
         ruta: "diseno-sistema-web.html",
-        titulo: "Diseño de un sistema web"
+        titulo: "Metodología IWEB"
     },
     {
         ruta: "plan-tic.html",
@@ -86,12 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>`).join("");
     }
 
-    // Actualizar automáticamente el año del pie de página
     document.querySelectorAll("[data-year]").forEach((elemento) => {
         elemento.textContent = new Date().getFullYear();
     });
 
-    // Animar elementos cuando aparecen en pantalla
     const elementosAnimados = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window) {
@@ -99,34 +97,21 @@ document.addEventListener("DOMContentLoaded", () => {
             (entradas, observer) => {
                 entradas.forEach((entrada) => {
                     if (entrada.isIntersecting) {
-                        entrada.target.classList.add(
-                            "animate__animated",
-                            "animate__fadeInUp"
-                        );
-
+                        entrada.target.classList.add("animate__animated", "animate__fadeInUp");
                         observer.unobserve(entrada.target);
                     }
                 });
             },
-            {
-                threshold: 0.15
-            }
+            { threshold: 0.15 }
         );
 
-        elementosAnimados.forEach((elemento) => {
-            observador.observe(elemento);
-        });
+        elementosAnimados.forEach((elemento) => observador.observe(elemento));
     } else {
-        // Compatibilidad con navegadores sin IntersectionObserver
         elementosAnimados.forEach((elemento) => {
-            elemento.classList.add(
-                "animate__animated",
-                "animate__fadeInUp"
-            );
+            elemento.classList.add("animate__animated", "animate__fadeInUp");
         });
     }
 
-    // Controlar el menú móvil y el desplegable sin Bootstrap JS
     const botonMenu = document.querySelector(".navbar-toggler");
     const menu = document.querySelector("#navbarContenido");
     const botonTematicas = document.querySelector("#navbarContenido .dropdown-toggle");
@@ -134,15 +119,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (botonMenu && menu) {
         botonMenu.addEventListener("click", () => {
-            const estaAbierto =
-                botonMenu.getAttribute("aria-expanded") === "true";
-
+            const estaAbierto = botonMenu.getAttribute("aria-expanded") === "true";
             botonMenu.setAttribute("aria-expanded", String(!estaAbierto));
             botonMenu.setAttribute("aria-label", estaAbierto ? "Abrir menú" : "Cerrar menú");
             menu.classList.toggle("show", !estaAbierto);
         });
 
-        // Cerrar el menú al seleccionar un enlace
         menu.querySelectorAll("a.nav-link, .dropdown-item").forEach((enlace) => {
             enlace.addEventListener("click", () => {
                 menu.classList.remove("show");
