@@ -1,0 +1,7 @@
+# Archivos temporales de Visual Studio
+.vs/
+
+# Archivos generados localmente
+*.user
+*.suo
+*.cache
