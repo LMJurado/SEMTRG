@@ -76,6 +76,16 @@ const metodologiasEspecificas = [
         ruta: "investigacion-accion-autonomia-tea.html",
         titulo: "Estrategias didácticas con pensamiento computacional para fortalecer la autonomía en estudiantes con TEA nivel 2",
         ilustracion: "autonomia"
+    },
+    {
+        ruta: "metodologia-enfoque-mixto-yana.html",
+        titulo: "Metodología con enfoque mixto para la evaluación de la usabilidad de YANA y el análisis de la experiencia de los estudiantes durante su utilización",
+        ilustracion: "analisis"
+    },
+    {
+        ruta: "modelo-addie.html",
+        titulo: "Modelo ADDIE para el diseño de la estrategia digital de inducción de la Universidad de Nariño",
+        ilustracion: "educacion"
     }
 ];
 
