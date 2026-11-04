@@ -336,6 +336,18 @@ body {
     line-height: 1.45;
 }
 
+.metodologia-figura {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    margin: 0 auto;
+    object-fit: contain;
+    border: 1px solid rgb(35 75 99 / 10%);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgb(15 23 42 / 10%);
+}
+
 .indice-tarjeta {
     margin-bottom: 1rem;
     color: var(--color-secondary);
