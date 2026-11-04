@@ -68,6 +68,11 @@ const metodologiasEspecificas = [
         ilustracion: "aprendizaje"
     },
     {
+        ruta: "scrum-unifit.html",
+        titulo: "Metodología Scrum aplicada al proyecto UniFit",
+        ilustracion: "aprendizaje"
+    },
+    {
         ruta: "investigacion-accion-autonomia-tea.html",
         titulo: "Estrategias didácticas con pensamiento computacional para fortalecer la autonomía en estudiantes con TEA nivel 2",
         ilustracion: "autonomia"
