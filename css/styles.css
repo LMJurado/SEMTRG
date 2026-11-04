@@ -338,8 +338,10 @@ body {
 
 .metodologia-figura {
     display: block;
-    width: 100%;
-    max-height: 360px;
+    width: auto;
+    max-width: 100%;
+    max-height: 80vh;
+    height: auto;
     margin: 0 auto;
     object-fit: contain;
     border: 1px solid rgb(35 75 99 / 10%);
