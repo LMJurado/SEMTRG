@@ -3,9 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Investigación: Estado actual | metodologiasdesarro</title>
+    <title>Investigación: Metodología de investigación</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .grafico-wrapper { max-width: 750px; margin: 25px auto 40px; padding: 20px; background: #fff; border-radius: 12px; }
+        .grafico-container { position: relative; width: 100%; height: 320px; }
+        .grafico-titulo { text-align: center; font-weight: 600; margin-bottom: 15px; }
+        @media(max-width:576px) { .grafico-container { height: 280px; } }
+    </style>
 </head>
 <body>
     <a class="visually-hidden-focusable p-3" href="#contenido">Saltar al contenido</a>
@@ -16,94 +23,125 @@
 
         <section aria-labelledby="enfoque" class="mb-5">
             <h2 id="enfoque" class="titulo-seccion h3">ENFOQUE</h2>
-            <p>
-                El enfoque puede ser cualitativo, cuantitativo o mixto, dependiendo de los objetivos y las características del problema de investigación. En el enfoque cualitativo, principios como la fenomenología permiten estudiar e interpretar los fenómenos educativos relacionados con las tecnologías de la información y la comunicación (TIC), así como las experiencias, percepciones y formas de interacción social de los participantes.
-            </p>
-            <p>
-                Este tipo de investigación busca comprender las acciones y el comportamiento humano, profundizando en sus significados, experiencias y motivaciones. Por otra parte, cuando se pretende describir características, variables o comportamientos en una población determinada, puede emplearse un diseño transeccional descriptivo, que permite recolectar datos en un único momento y analizar la incidencia e interrelación de las variables en un tiempo específico.
-            </p>
+            <p>El enfoque puede ser cualitativo, cuantitativo o mixto, dependiendo de los objetivos y las características del problema de investigación. En el enfoque cualitativo, principios como la fenomenología permiten estudiar e interpretar los fenómenos educativos relacionados con las tecnologías de la información y la comunicación (TIC), así como las experiencias, percepciones y formas de interacción social de los participantes.</p>
+            <p>Este tipo de investigación busca comprender las acciones y el comportamiento humano, profundizando en sus significados, experiencias y motivaciones. Por otra parte, cuando se pretende describir características, variables o comportamientos en una población determinada, puede emplearse un diseño transeccional descriptivo, que permite recolectar datos en un único momento y analizar la incidencia e interrelación de las variables en un tiempo específico.</p>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Gráfico 1. Enfoques de investigación</h3>
+                <div class="grafico-container"><canvas id="graficoEnfoques"></canvas></div>
+            </div>
         </section>
 
         <section aria-labelledby="alcance" class="mb-5">
             <h2 id="alcance" class="titulo-seccion h3">ALCANCE</h2>
             <ol>
-                <li class="mb-3">
-                    <strong>Estudio exploratorio:</strong> busca obtener información general sobre un fenómeno o problema de investigación poco conocido. Permite identificar características relevantes, reconocer posibles variables y establecer nuevas líneas de investigación para estudios posteriores.
-                </li>
-                <li>
-                    <strong>Estudio descriptivo:</strong> tiene como finalidad recopilar y presentar información detallada sobre un fenómeno o problema, describiendo sus características, dimensiones y variables con precisión.
-                </li>
+                <li class="mb-3"><strong>Estudio exploratorio:</strong> busca obtener información general sobre un fenómeno o problema de investigación poco conocido. Permite identificar características relevantes, reconocer posibles variables y establecer nuevas líneas de investigación para estudios posteriores.</li>
+                <li><strong>Estudio descriptivo:</strong> tiene como finalidad recopilar y presentar información detallada sobre un fenómeno o problema, describiendo sus características, dimensiones y variables con precisión.</li>
             </ol>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Gráfico 2. Alcances de la investigación</h3>
+                <div class="grafico-container"><canvas id="graficoAlcance"></canvas></div>
+            </div>
         </section>
 
         <section aria-labelledby="hipotesis" class="mb-5">
             <h2 id="hipotesis" class="titulo-seccion h3">HIPÓTESIS</h2>
-            <p>
-                La hipótesis de investigación es una proposición provisional que orienta el desarrollo del estudio y plantea una posible respuesta al problema de investigación. Su formulación contribuye a definir el diseño metodológico, las variables que se analizarán y los procedimientos necesarios para contrastarla con la evidencia obtenida.
-            </p>
-            <p>
-                Las hipótesis pueden formularse a partir de conocimientos previos, antecedentes teóricos y observaciones iniciales. Su aceptación o rechazo depende de los resultados del proceso investigativo y de la evidencia recopilada. En las investigaciones cuantitativas, las hipótesis pueden someterse a contrastación estadística, mientras que en los estudios cualitativos pueden emplearse supuestos orientadores que se revisan y ajustan durante el proceso de análisis. Asimismo, la posibilidad de replicar los procedimientos y contrastar los resultados contribuye a fortalecer la confiabilidad de los hallazgos.
-            </p>
+            <p>La hipótesis de investigación es una proposición provisional que orienta el desarrollo del estudio y plantea una posible respuesta al problema de investigación. Su formulación contribuye a definir el diseño metodológico, las variables que se analizarán y los procedimientos necesarios para contrastarla con la evidencia obtenida.</p>
+            <p>Las hipótesis pueden formularse a partir de conocimientos previos, antecedentes teóricos y observaciones iniciales. Su aceptación o rechazo depende de los resultados del proceso investigativo y de la evidencia recopilada. En las investigaciones cuantitativas, las hipótesis pueden someterse a contrastación estadística, mientras que en los estudios cualitativos pueden emplearse supuestos orientadores que se revisan y ajustan durante el proceso de análisis. Asimismo, la posibilidad de replicar los procedimientos y contrastar los resultados contribuye a fortalecer la confiabilidad de los hallazgos.</p>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Gráfico 3. Proceso de formulación y contrastación de hipótesis</h3>
+                <div class="grafico-container"><canvas id="graficoHipotesis"></canvas></div>
+            </div>
         </section>
 
         <section aria-labelledby="poblacion" class="mb-5">
             <h2 id="poblacion" class="titulo-seccion h3">POBLACIÓN</h2>
-            <p>
-                La población corresponde al conjunto de personas, objetos, instituciones o elementos que comparten determinadas características y sobre los cuales se pretende desarrollar una investigación. Para delimitarla adecuadamente, es necesario considerar los siguientes aspectos:
-            </p>
+            <p>La población corresponde al conjunto de personas, objetos, instituciones o elementos que comparten determinadas características y sobre los cuales se pretende desarrollar una investigación. Para delimitarla adecuadamente, es necesario considerar los siguientes aspectos:</p>
             <ul>
-                <li class="mb-2">
-                    <strong>Homogeneidad:</strong> hace referencia a las características comunes que deben cumplir los integrantes de la población, de acuerdo con las variables y los criterios definidos para el estudio.
-                </li>
-                <li class="mb-2">
-                    <strong>Tiempo:</strong> corresponde al período en el que se ubica la población de interés. Es necesario establecer si la investigación se realizará sobre una población del momento presente, de un período anterior o de diferentes generaciones.
-                </li>
-                <li class="mb-2">
-                    <strong>Espacio:</strong> se refiere al lugar geográfico o contexto en el que se encuentra la población objeto de estudio. Por razones de tiempo y recursos, puede ser necesario delimitar la investigación a una institución, comunidad, localidad o región específica.
-                </li>
-                <li>
-                    <strong>Cantidad:</strong> hace referencia al tamaño de la población que se estudiará. Este aspecto es importante para determinar, cuando corresponda, el tamaño de la muestra y los recursos necesarios para desarrollar la investigación.
-                </li>
+                <li class="mb-2"><strong>Homogeneidad:</strong> hace referencia a las características comunes que deben cumplir los integrantes de la población, de acuerdo con las variables y los criterios definidos para el estudio.</li>
+                <li class="mb-2"><strong>Tiempo:</strong> corresponde al período en el que se ubica la población de interés. Es necesario establecer si la investigación se realizará sobre una población del momento presente, de un período anterior o de diferentes generaciones.</li>
+                <li class="mb-2"><strong>Espacio:</strong> se refiere al lugar geográfico o contexto en el que se encuentra la población objeto de estudio. Por razones de tiempo y recursos, puede ser necesario delimitar la investigación a una institución, comunidad, localidad o región específica.</li>
+                <li><strong>Cantidad:</strong> hace referencia al tamaño de la población que se estudiará. Este aspecto es importante para determinar, cuando corresponda, el tamaño de la muestra y los recursos necesarios para desarrollar la investigación.</li>
             </ul>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Gráfico 4. Criterios para delimitar la población</h3>
+                <div class="grafico-container"><canvas id="graficoPoblacion"></canvas></div>
+            </div>
         </section>
 
         <section aria-labelledby="instrumentos" class="mb-5">
             <h2 id="instrumentos" class="titulo-seccion h3">INSTRUMENTOS DE RECOLECCIÓN DE INFORMACIÓN</h2>
-            <p>
-                La recolección de datos comprende el uso de diversas técnicas e instrumentos que permiten obtener información relevante para responder a los objetivos de una investigación. Entre las técnicas más utilizadas se encuentran las encuestas, las entrevistas y la observación. Estas pueden apoyarse en instrumentos como cuestionarios, guías de entrevista, listas de chequeo y fichas de observación.
-            </p>
-            <p>
-                Los instrumentos que se diseñen para la investigación deben responder al problema planteado, los objetivos y las características de la población objeto de estudio. Asimismo, deben permitir recopilar información pertinente, organizada y suficiente para analizar el fenómeno investigado y fundamentar las conclusiones.
-            </p>
-            <p>
-                La aplicación de estos instrumentos se realizará de acuerdo con la planificación metodológica establecida. Cuando se emplee un diseño transeccional, la recolección de información se llevará a cabo en un único momento; en otros diseños, podrá desarrollarse en diferentes momentos, según las necesidades y los objetivos del estudio.
-            </p>
+            <p>La recolección de datos comprende el uso de diversas técnicas e instrumentos que permiten obtener información relevante para responder a los objetivos de una investigación. Entre las técnicas más utilizadas se encuentran las encuestas, las entrevistas y la observación. Estas pueden apoyarse en instrumentos como cuestionarios, guías de entrevista, listas de chequeo y fichas de observación.</p>
+            <p>Los instrumentos que se diseñen para la investigación deben responder al problema planteado, los objetivos y las características de la población objeto de estudio. Asimismo, deben permitir recopilar información pertinente, organizada y suficiente para analizar el fenómeno investigado y fundamentar las conclusiones.</p>
+            <p>La aplicación de estos instrumentos se realizará de acuerdo con la planificación metodológica establecida. Cuando se emplee un diseño transeccional, la recolección de información se llevará a cabo en un único momento; en otros diseños, podrá desarrollarse en diferentes momentos, según las necesidades y los objetivos del estudio.</p>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Gráfico 5. Técnicas e instrumentos de recolección</h3>
+                <div class="grafico-container"><canvas id="graficoInstrumentos"></canvas></div>
+            </div>
         </section>
 
         <section aria-labelledby="parte-investigativa" class="mb-5">
             <h2 id="parte-investigativa" class="titulo-seccion h3">PARTE INVESTIGATIVA</h2>
-            <p>
-                La parte investigativa comprende las actividades orientadas a identificar, recopilar, organizar y analizar la información necesaria para responder al problema de investigación. En esta etapa se examinan los antecedentes, los referentes teóricos y los aspectos relevantes del fenómeno estudiado, con el propósito de comprender su contexto, reconocer las perspectivas existentes e identificar oportunidades de mejora.
-            </p>
-            <p>
-                Además, permite establecer los elementos que fundamentan la investigación, reconocer las limitaciones encontradas en estudios anteriores y formular propuestas que contribuyan a abordar el problema de manera pertinente e innovadora.
-            </p>
+            <p>La parte investigativa comprende las actividades orientadas a identificar, recopilar, organizar y analizar la información necesaria para responder al problema de investigación. En esta etapa se examinan los antecedentes, los referentes teóricos y los aspectos relevantes del fenómeno estudiado, con el propósito de comprender su contexto, reconocer las perspectivas existentes e identificar oportunidades de mejora.</p>
+            <p>Además, permite establecer los elementos que fundamentan la investigación, reconocer las limitaciones encontradas en estudios anteriores y formular propuestas que contribuyan a abordar el problema de manera pertinente e innovadora.</p>
         </section>
 
         <section aria-labelledby="parte-procedimental" class="mb-5">
             <h2 id="parte-procedimental" class="titulo-seccion h3">PARTE PROCEDIMENTAL</h2>
-            <p>
-                La parte procedimental comprende el conjunto de etapas, actividades y procedimientos que se desarrollan de manera organizada para alcanzar los objetivos de la investigación. En esta etapa se establece cómo se recopilarán los datos, qué técnicas e instrumentos se utilizarán y de qué manera se procesará y analizará la información obtenida.
-            </p>
-            <p>
-                Posteriormente, el investigador interpreta los resultados a partir de los objetivos planteados y los referentes teóricos que sustentan el estudio. Este proceso requiere una actitud crítica, reflexiva y objetiva que permita identificar patrones, establecer relaciones, reconocer limitaciones y formular conclusiones fundamentadas en la evidencia recopilada.
-            </p>
-            <p>
-                El procedimiento debe ser coherente con el enfoque y el alcance de la investigación, de modo que cada actividad contribuya al cumplimiento de los objetivos y a la formulación de respuestas pertinentes al problema estudiado.
-            </p>
+            <p>La parte procedimental comprende el conjunto de etapas, actividades y procedimientos que se desarrollan de manera organizada para alcanzar los objetivos de la investigación. En esta etapa se establece cómo se recopilarán los datos, qué técnicas e instrumentos se utilizarán y de qué manera se procesará y analizará la información obtenida.</p>
+            <p>Posteriormente, el investigador interpreta los resultados a partir de los objetivos planteados y los referentes teóricos que sustentan el estudio. Este proceso requiere una actitud crítica, reflexiva y objetiva que permita identificar patrones, establecer relaciones, reconocer limitaciones y formular conclusiones fundamentadas en la evidencia recopilada.</p>
+            <p>El procedimiento debe ser coherente con el enfoque y el alcance de la investigación, de modo que cada actividad contribuya al cumplimiento de los objetivos y a la formulación de respuestas pertinentes al problema estudiado.</p>
+
+
         </section>
     </main>
 
     <footer class="sitio-footer py-3"><div class="container small">Licenciatura en Informática © 2026</div></footer>
+
+    <script>
+        Chart.defaults.font.family = "'Segoe UI', sans-serif";
+        Chart.defaults.color = "#444";
+        const colores = ["#315C85", "#4C8C9B", "#79A88D", "#D5A65A"];
+
+        new Chart(document.getElementById("graficoEnfoques"), {
+            type: "doughnut",
+            data: { labels: ["Cualitativo", "Cuantitativo", "Mixto"], datasets: [{ data: [1, 1, 1], backgroundColor: colores.slice(0, 3), borderWidth: 2 }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "bottom" }, tooltip: { enabled: false } } }
+        });
+
+        new Chart(document.getElementById("graficoAlcance"), {
+            type: "bar",
+            data: { labels: ["Exploratorio", "Descriptivo"], datasets: [{ label: "Propósito", data: [1, 1], backgroundColor: colores.slice(0, 2), borderRadius: 6 }] },
+            options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, scales: { x: { display: false, min: 0, max: 1.5 }, y: { grid: { display: false } } }, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+        });
+
+        new Chart(document.getElementById("graficoHipotesis"), {
+            type: "bar",
+            data: { labels: ["Problema", "Antecedentes", "Formulación", "Recolección", "Análisis", "Contrastación"], datasets: [{ label: "Etapas", data: [1, 1, 1, 1, 1, 1], backgroundColor: colores[0], borderRadius: 5 }] },
+            options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, scales: { x: { display: false, min: 0, max: 1.5 }, y: { grid: { display: false } } }, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+        });
+
+        new Chart(document.getElementById("graficoPoblacion"), {
+            type: "radar",
+            data: { labels: ["Homogeneidad", "Tiempo", "Espacio", "Cantidad"], datasets: [{ label: "Criterios de delimitación", data: [1, 1, 1, 1], backgroundColor: "rgba(49,92,133,0.18)", borderColor: colores[0], pointBackgroundColor: colores[0], borderWidth: 2 }] },
+            options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 1, ticks: { display: false }, pointLabels: { font: { size: 12 } } } }, plugins: { legend: { position: "bottom" }, tooltip: { enabled: false } } }
+        });
+
+        new Chart(document.getElementById("graficoInstrumentos"), {
+            type: "bar",
+            data: { labels: ["Encuesta", "Entrevista", "Observación"], datasets: [{ label: "Técnica", data: [1, 1, 1], backgroundColor: colores.slice(0, 3), borderRadius: 5 }] },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { display: false, min: 0, max: 1.5 }, x: { grid: { display: false } } }, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+        });
+
+        new Chart(document.getElementById("graficoProceso"), {
+            type: "bar",
+            data: { labels: ["Parte investigativa", "Parte procedimental"], datasets: [{ label: "Componentes", data: [1, 1], backgroundColor: colores.slice(0, 2), borderRadius: 6 }] },
+            options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, scales: { x: { display: false, min: 0, max: 1.5 }, y: { grid: { display: false } } }, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+        });
+    </script>
 </body>
 </html>
