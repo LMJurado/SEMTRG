@@ -6,12 +6,21 @@
     <title>Investigación: Metodología de investigación</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/main.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
     <style>
-        .grafico-wrapper { max-width: 750px; margin: 25px auto 40px; padding: 20px; background: #fff; border-radius: 12px; }
-        .grafico-container { position: relative; width: 100%; height: 320px; }
-        .grafico-titulo { text-align: center; font-weight: 600; margin-bottom: 15px; }
-        @media(max-width:576px) { .grafico-container { height: 280px; } }
+        .grafico-wrapper { max-width: 900px; margin: 25px auto 40px; padding: 24px; background: #fff; border: 1px solid #e7edf2; border-radius: 14px; box-shadow: 0 4px 16px rgba(24,55,80,.05); }
+        .grafico-titulo { text-align: center; font-weight: 600; margin: 0 0 22px; color: #315C85; }
+        .grafico-tarjetas { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,220px),1fr)); gap: 16px; }
+        .grafico-tarjeta { height: 100%; padding: 20px; border: 1px solid #e4ebf0; border-top: 4px solid #315C85; border-radius: 11px; background: #fff; }
+        .grafico-tarjeta:nth-child(3n+2) { border-top-color: #4C8C9B; }
+        .grafico-tarjeta:nth-child(3n) { border-top-color: #79A88D; }
+        .grafico-tarjeta:nth-child(4n) { border-top-color: #D5A65A; }
+        .grafico-tarjeta h4 { margin: 0 0 9px; font-size: 1.05rem; font-weight: 650; color: #294b68; }
+        .grafico-tarjeta p { margin: 0; color: #52616d; line-height: 1.55; }
+        .mermaid-wrap { width: 100%; overflow-x: auto; padding: 8px 0; }
+        .mermaid { min-width: 0; display: flex; justify-content: center; }
+        .mermaid svg { display: block; max-width: 100%; height: auto; }
+        @media(max-width:576px) { .grafico-wrapper { padding: 16px; } .mermaid { justify-content: flex-start; } .mermaid svg { max-width: none; } }
     </style>
 </head>
 <body>
@@ -28,7 +37,11 @@
 
             <div class="grafico-wrapper">
                 <h3 class="grafico-titulo">Gráfico 1. Enfoques de investigación</h3>
-                <div class="grafico-container"><canvas id="graficoEnfoques"></canvas></div>
+                <div class="grafico-tarjetas">
+                    <article class="grafico-tarjeta"><h4>Enfoque cualitativo</h4><p>Comprende experiencias, percepciones, significados y formas de interacción de los participantes en su contexto.</p></article>
+                    <article class="grafico-tarjeta"><h4>Enfoque cuantitativo</h4><p>Examina variables mediante datos cuantificables y procedimientos de análisis que permiten describir o contrastar relaciones.</p></article>
+                    <article class="grafico-tarjeta"><h4>Enfoque mixto</h4><p>Integra procedimientos cualitativos y cuantitativos para abordar el problema desde perspectivas complementarias.</p></article>
+                </div>
             </div>
         </section>
 
@@ -41,7 +54,10 @@
 
             <div class="grafico-wrapper">
                 <h3 class="grafico-titulo">Gráfico 2. Alcances de la investigación</h3>
-                <div class="grafico-container"><canvas id="graficoAlcance"></canvas></div>
+                <div class="grafico-tarjetas">
+                    <article class="grafico-tarjeta"><h4>Estudio exploratorio</h4><p><strong>Finalidad:</strong> aproximarse a fenómenos poco conocidos, reconocer aspectos relevantes e identificar posibles variables o líneas de estudio.</p></article>
+                    <article class="grafico-tarjeta"><h4>Estudio descriptivo</h4><p><strong>Finalidad:</strong> caracterizar y presentar de manera detallada las propiedades, dimensiones y variables del fenómeno estudiado.</p></article>
+                </div>
             </div>
         </section>
 
@@ -52,7 +68,20 @@
 
             <div class="grafico-wrapper">
                 <h3 class="grafico-titulo">Gráfico 3. Proceso de formulación y contrastación de hipótesis</h3>
-                <div class="grafico-container"><canvas id="graficoHipotesis"></canvas></div>
+                <div class="mermaid-wrap"><div class="mermaid">
+flowchart TD
+    A["1. Identificación del problema"] --> B["2. Revisión de antecedentes y referentes teóricos"]
+    B --> C["3. Formulación de la hipótesis"]
+    C --> D["4. Recolección de información"]
+    D --> E["5. Análisis de resultados"]
+    E --> F["6. Contrastación de la hipótesis"]
+    classDef inicio fill:#315C85,color:#fff,stroke:#244765,stroke-width:1.5px
+    classDef proceso fill:#eaf2f6,color:#294b68,stroke:#4C8C9B,stroke-width:1.5px
+    classDef cierre fill:#e8f2eb,color:#315b42,stroke:#79A88D,stroke-width:1.5px
+    class A inicio
+    class B,C,D,E proceso
+    class F cierre
+                </div></div>
             </div>
         </section>
 
@@ -68,7 +97,12 @@
 
             <div class="grafico-wrapper">
                 <h3 class="grafico-titulo">Gráfico 4. Criterios para delimitar la población</h3>
-                <div class="grafico-container"><canvas id="graficoPoblacion"></canvas></div>
+                <div class="grafico-tarjetas">
+                    <article class="grafico-tarjeta"><h4>Homogeneidad</h4><p>Definir las características comunes que deben cumplir los integrantes de la población según los criterios del estudio.</p></article>
+                    <article class="grafico-tarjeta"><h4>Tiempo</h4><p>Precisar el período al que corresponde la población que será objeto de investigación.</p></article>
+                    <article class="grafico-tarjeta"><h4>Espacio</h4><p>Delimitar el contexto geográfico o institucional en el que se encuentra la población de interés.</p></article>
+                    <article class="grafico-tarjeta"><h4>Cantidad</h4><p>Establecer el tamaño de la población para valorar, cuando corresponda, la muestra y los recursos necesarios.</p></article>
+                </div>
             </div>
         </section>
 
@@ -80,7 +114,20 @@
 
             <div class="grafico-wrapper">
                 <h3 class="grafico-titulo">Gráfico 5. Técnicas e instrumentos de recolección</h3>
-                <div class="grafico-container"><canvas id="graficoInstrumentos"></canvas></div>
+                <div class="mermaid-wrap"><div class="mermaid">
+flowchart LR
+    E["Técnicas de recolección"] --> A["Encuesta"]
+    E --> B["Entrevista"]
+    E --> C["Observación"]
+    A --> A1["Cuestionario"]
+    B --> B1["Guía de entrevista"]
+    C --> C1["Ficha de observación"]
+    C --> C2["Lista de chequeo"]
+    classDef tecnica fill:#315C85,color:#fff,stroke:#244765,stroke-width:1.5px
+    classDef instrumento fill:#eaf2f6,color:#294b68,stroke:#4C8C9B,stroke-width:1.5px
+    class E,A,B,C tecnica
+    class A1,B1,C1,C2 instrumento
+                </div></div>
             </div>
         </section>
 
@@ -96,51 +143,39 @@
             <p>Posteriormente, el investigador interpreta los resultados a partir de los objetivos planteados y los referentes teóricos que sustentan el estudio. Este proceso requiere una actitud crítica, reflexiva y objetiva que permita identificar patrones, establecer relaciones, reconocer limitaciones y formular conclusiones fundamentadas en la evidencia recopilada.</p>
             <p>El procedimiento debe ser coherente con el enfoque y el alcance de la investigación, de modo que cada actividad contribuya al cumplimiento de los objetivos y a la formulación de respuestas pertinentes al problema estudiado.</p>
 
-
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Gráfico 6. Componentes del proceso investigativo</h3>
+                <div class="mermaid-wrap"><div class="mermaid">
+flowchart TB
+    subgraph I["PARTE INVESTIGATIVA"]
+        direction TB
+        I1["Antecedentes"] --> I2["Referentes teóricos"]
+        I2 --> I3["Identificación del problema"]
+        I3 --> I4["Fundamentación"]
+    end
+    subgraph P["PARTE PROCEDIMENTAL"]
+        direction TB
+        P1["Planificación"] --> P2["Recolección de datos"]
+        P2 --> P3["Procesamiento"]
+        P3 --> P4["Análisis"]
+        P4 --> P5["Interpretación de resultados"]
+    end
+    I4 <--> P1
+    classDef investigativa fill:#eaf2f6,color:#294b68,stroke:#4C8C9B,stroke-width:1.5px
+    classDef procedimental fill:#e8f2eb,color:#315b42,stroke:#79A88D,stroke-width:1.5px
+    class I1,I2,I3,I4 investigativa
+    class P1,P2,P3,P4,P5 procedimental
+                </div></div>
+            </div>
         </section>
     </main>
 
     <footer class="sitio-footer py-3"><div class="container small">Licenciatura en Informática © 2026</div></footer>
 
     <script>
-        Chart.defaults.font.family = "'Segoe UI', sans-serif";
-        Chart.defaults.color = "#444";
-        const colores = ["#315C85", "#4C8C9B", "#79A88D", "#D5A65A"];
-
-        new Chart(document.getElementById("graficoEnfoques"), {
-            type: "doughnut",
-            data: { labels: ["Cualitativo", "Cuantitativo", "Mixto"], datasets: [{ data: [1, 1, 1], backgroundColor: colores.slice(0, 3), borderWidth: 2 }] },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "bottom" }, tooltip: { enabled: false } } }
-        });
-
-        new Chart(document.getElementById("graficoAlcance"), {
-            type: "bar",
-            data: { labels: ["Exploratorio", "Descriptivo"], datasets: [{ label: "Propósito", data: [1, 1], backgroundColor: colores.slice(0, 2), borderRadius: 6 }] },
-            options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, scales: { x: { display: false, min: 0, max: 1.5 }, y: { grid: { display: false } } }, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-        });
-
-        new Chart(document.getElementById("graficoHipotesis"), {
-            type: "bar",
-            data: { labels: ["Problema", "Antecedentes", "Formulación", "Recolección", "Análisis", "Contrastación"], datasets: [{ label: "Etapas", data: [1, 1, 1, 1, 1, 1], backgroundColor: colores[0], borderRadius: 5 }] },
-            options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, scales: { x: { display: false, min: 0, max: 1.5 }, y: { grid: { display: false } } }, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-        });
-
-        new Chart(document.getElementById("graficoPoblacion"), {
-            type: "radar",
-            data: { labels: ["Homogeneidad", "Tiempo", "Espacio", "Cantidad"], datasets: [{ label: "Criterios de delimitación", data: [1, 1, 1, 1], backgroundColor: "rgba(49,92,133,0.18)", borderColor: colores[0], pointBackgroundColor: colores[0], borderWidth: 2 }] },
-            options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 1, ticks: { display: false }, pointLabels: { font: { size: 12 } } } }, plugins: { legend: { position: "bottom" }, tooltip: { enabled: false } } }
-        });
-
-        new Chart(document.getElementById("graficoInstrumentos"), {
-            type: "bar",
-            data: { labels: ["Encuesta", "Entrevista", "Observación"], datasets: [{ label: "Técnica", data: [1, 1, 1], backgroundColor: colores.slice(0, 3), borderRadius: 5 }] },
-            options: { responsive: true, maintainAspectRatio: false, scales: { y: { display: false, min: 0, max: 1.5 }, x: { grid: { display: false } } }, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-        });
-
-        new Chart(document.getElementById("graficoProceso"), {
-            type: "bar",
-            data: { labels: ["Parte investigativa", "Parte procedimental"], datasets: [{ label: "Componentes", data: [1, 1], backgroundColor: colores.slice(0, 2), borderRadius: 6 }] },
-            options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, scales: { x: { display: false, min: 0, max: 1.5 }, y: { grid: { display: false } } }, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+        document.addEventListener("DOMContentLoaded", function () {
+            mermaid.initialize({ startOnLoad: false, theme: "base", securityLevel: "strict", flowchart: { useMaxWidth: true, htmlLabels: true, curve: "basis", nodeSpacing: 35, rankSpacing: 42 }, themeVariables: { fontFamily: "Segoe UI, sans-serif", primaryColor: "#eaf2f6", primaryTextColor: "#294b68", primaryBorderColor: "#4C8C9B", lineColor: "#6b8798", secondaryColor: "#e8f2eb", tertiaryColor: "#fff8e9", fontSize: "14px" } });
+            mermaid.run({ querySelector: ".mermaid" });
         });
     </script>
 </body>
