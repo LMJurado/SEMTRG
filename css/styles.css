@@ -359,9 +359,98 @@ body {
     font-weight: 650;
 }
 
+.chart-card {
+    height: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(180deg, #ffffff, #f7fafb);
+    border: 1px solid rgb(35 75 99 / 9%);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 6%);
+}
+
+.chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.chart-header h3 {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.badge-soft {
+    display: inline-flex;
+    padding: 0.32rem 0.7rem;
+    color: var(--color-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgb(52 124 131 / 12%);
+    border-radius: 999px;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 290px;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.kpi-item {
+    padding: 0.9rem 0.8rem;
+    background: linear-gradient(135deg, #edf6f6, #f8fafb);
+    border: 1px solid rgb(52 124 131 / 12%);
+    border-radius: 12px;
+}
+
+.kpi-item strong {
+    display: block;
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+.kpi-item span {
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
 .sitio-footer {
     margin-top: 3rem;
     border-top: 3px solid var(--color-accent);
+}
+
+:root[data-theme="dark"] .chart-card {
+    background: linear-gradient(180deg, #1c2a35, #223642);
+    border-color: rgb(255 255 255 / 8%);
+    box-shadow: 0 10px 28px rgb(0 0 0 / 12%);
+}
+
+:root[data-theme="dark"] .chart-header h3,
+:root[data-theme="dark"] .kpi-item strong {
+    color: #e7f1f4;
+}
+
+:root[data-theme="dark"] .kpi-item {
+    background: linear-gradient(135deg, #243b46, #1c2a35);
+    border-color: rgb(148 205 201 / 18%);
+}
+
+:root[data-theme="dark"] .badge-soft {
+    color: #d5f5f2;
+    background: rgb(148 205 201 / 14%);
 }
 
 /* Páginas de metodología */

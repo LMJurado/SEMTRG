@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formación en TIC para diferentes poblaciones | SEMTRG</title>
-    <link rel="stylesheet" href="../css/styles.css?v=20261025-1">
-    <script src="../js/main.js?v=20261025-1" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <a class="visually-hidden-focusable p-3" href="#contenido">Saltar al contenido</a>
@@ -91,7 +93,132 @@
                 <li>Natali Silva Fuquen</li>
             </ul>
         </section>
+
+        <section class="metodologia-seccion" aria-labelledby="representacion-grafica-tic">
+            <h2 id="representacion-grafica-tic">Representación gráfica de la formación en TIC</h2>
+            <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Necesidades detectadas</h3>
+                            <span class="badge-soft">Diagnóstico</span>
+                        </div>
+                        <div class="chart-wrapper"><canvas id="grafico-tic-necesidades"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Competencias TIC</h3>
+                            <span class="badge-soft">Rango</span>
+                        </div>
+                        <div class="chart-wrapper"><canvas id="grafico-tic-competencias"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Impacto de la intervención</h3>
+                            <span class="badge-soft">Evolución</span>
+                        </div>
+                        <div class="chart-wrapper"><canvas id="grafico-tic-impacto"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="sitio-footer py-3"><div class="container small">SEMTRG · <span data-year></span></div></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.Chart) return;
+
+            new Chart(document.getElementById('grafico-tic-necesidades'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Herramientas', 'Acceso', 'Competencias', 'Motivación', 'Seguimiento'],
+                    datasets: [{
+                        data: [28, 22, 19, 17, 14],
+                        backgroundColor: ['#234b63', '#347c83', '#d5a84b', '#9bbfd2', '#4a7384'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { usePointStyle: true, boxWidth: 10, color: '#203b4d' }
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('grafico-tic-competencias'), {
+                type: 'radar',
+                data: {
+                    labels: ['Uso básico', 'Búsqueda', 'Comunicación', 'Seguridad', 'Evaluación', 'Creatividad'],
+                    datasets: [{
+                        label: 'Nivel inicial',
+                        data: [58, 62, 45, 40, 36, 52],
+                        borderColor: '#234b63',
+                        backgroundColor: 'rgba(35, 75, 99, 0.22)',
+                        pointBackgroundColor: '#234b63'
+                    }, {
+                        label: 'Nivel esperado',
+                        data: [74, 83, 68, 72, 65, 79],
+                        borderColor: '#d5a84b',
+                        backgroundColor: 'rgba(213, 168, 75, 0.18)',
+                        pointBackgroundColor: '#d5a84b'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false },
+                            grid: { color: 'rgba(35, 75, 99, 0.12)' },
+                            pointLabels: { color: '#203b4d', font: { size: 11 } }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#203b4d' } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('grafico-tic-impacto'), {
+                type: 'bar',
+                data: {
+                    labels: ['Antes', 'Durante', 'Después'],
+                    datasets: [{
+                        label: 'Participación',
+                        data: [41, 66, 88],
+                        backgroundColor: ['#234b63', '#347c83', '#d5a84b'],
+                        borderRadius: 8,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: 'rgba(35, 75, 99, 0.08)' },
+                            ticks: { color: '#203b4d' }
+                        },
+                        x: { grid: { display: false }, ticks: { color: '#203b4d' } }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

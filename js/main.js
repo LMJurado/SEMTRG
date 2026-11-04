@@ -66,6 +66,11 @@ const metodologiasEspecificas = [
         ruta: "entorno-virtual-talento-humano.html",
         titulo: "Entorno virtual de aprendizaje para la gestión del talento humano",
         ilustracion: "aprendizaje"
+    },
+    {
+        ruta: "investigacion-accion-autonomia-tea.html",
+        titulo: "Estrategias didácticas con pensamiento computacional para fortalecer la autonomía en estudiantes con TEA nivel 2",
+        ilustracion: "autonomia"
     }
 ];
 
@@ -84,7 +89,8 @@ const ilustraciones = {
     poblaciones: '<circle cx="48" cy="34" r="8"/><circle cx="29" cy="42" r="6"/><circle cx="67" cy="42" r="6"/><path d="M32 68v-6a16 16 0 0 1 32 0v6m-39 0v-5a10 10 0 0 1 8-10m38 15v-5a10 10 0 0 0-8-10"/>',
     datos: '<circle cx="32" cy="35" r="6"/><circle cx="63" cy="31" r="5"/><circle cx="48" cy="60" r="7"/><circle cx="69" cy="65" r="4"/><path d="m38 35 20-3M35 40l9 15m10 1 12-8m-11 12 10 4"/>',
     chatbot: '<path d="M25 31q0-6 6-6h34q6 0 6 6v25q0 6-6 6H43l-12 9v-9h-1q-5 0-5-6V31Z"/><path d="M36 42h24M36 51h16"/>',
-    aprendizaje: '<rect x="27" y="28" width="42" height="38" rx="5"/><path d="M36 39h24m-24 9h17m-17 9h11"/><circle cx="65" cy="63" r="10"/>'
+    aprendizaje: '<rect x="27" y="28" width="42" height="38" rx="5"/><path d="M36 39h24m-24 9h17m-17 9h11"/><circle cx="65" cy="63" r="10"/>',
+    autonomia: '<circle cx="48" cy="31" r="8"/><path d="M48 39v17m0-10-13 8m13-8 13 8m-20 20 7-18 7 18m-31-4h48"/>'
 };
 
 function crearPortada(pagina) {

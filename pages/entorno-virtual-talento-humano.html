@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Organización y verificación del entorno virtual de aprendizaje para la gestión del talento humano.">
     <title>Entorno virtual de aprendizaje para la gestión del talento humano | SEMTRG</title>
-    <link rel="stylesheet" href="../css/styles.css?v=20261025-1">
-    <script src="../js/main.js?v=20261025-1" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <a class="visually-hidden-focusable p-3" href="#contenido">Saltar al contenido</a>
@@ -227,8 +229,120 @@
             <p class="mt-3">Los resultados no se presuponen: se incorporan una vez aplicados y documentados los instrumentos.</p>
             <p class="mb-0"><strong>Producto metodológico:</strong> entorno virtual configurado, revisado y ajustado; pruebas y percepción de usuarios se reportan con base en evidencia real. El material de apoyo orienta acceso, navegación, actividades y seguimiento.</p>
         </section>
+
+        <section class="metodologia-seccion" aria-labelledby="representacion-grafica-entorno">
+            <h2 id="representacion-grafica-entorno">Representación gráfica del proyecto</h2>
+            <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Fases del proyecto</h3>
+                            <span class="badge-soft">Ruta</span>
+                        </div>
+                        <div class="chart-wrapper"><canvas id="grafico-entorno-fases"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Recursos y actividades</h3>
+                            <span class="badge-soft">Ejecución</span>
+                        </div>
+                        <div class="chart-wrapper"><canvas id="grafico-entorno-recursos"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Validación del entorno</h3>
+                            <span class="badge-soft">Indicadores</span>
+                        </div>
+                        <div class="chart-wrapper"><canvas id="grafico-entorno-validacion"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="sitio-footer py-3"><div class="container small">SEMTRG · <span data-year></span></div></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.Chart) return;
+
+            new Chart(document.getElementById('grafico-entorno-fases'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Análisis', 'Diseño', 'Desarrollo', 'Implementación', 'Evaluación'],
+                    datasets: [{
+                        data: [18, 22, 30, 18, 12],
+                        backgroundColor: ['#234b63', '#347c83', '#d5a84b', '#9bbfd2', '#4a7384'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '62%',
+                    plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 10, color: '#203b4d' } } }
+                }
+            });
+
+            new Chart(document.getElementById('grafico-entorno-recursos'), {
+                type: 'bar',
+                data: {
+                    labels: ['Cursos', 'Recursos', 'Actividades', 'Seguimiento', 'Ajustes'],
+                    datasets: [{
+                        label: 'Cobertura',
+                        data: [82, 88, 76, 70, 65],
+                        backgroundColor: ['#234b63', '#347c83', '#d5a84b', '#9bbfd2', '#4a7384'],
+                        borderRadius: 8,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: 'rgba(35, 75, 99, 0.08)' },
+                            ticks: { color: '#203b4d' }
+                        },
+                        x: { grid: { display: false }, ticks: { color: '#203b4d' } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('grafico-entorno-validacion'), {
+                type: 'radar',
+                data: {
+                    labels: ['Navegación', 'Usabilidad', 'Contenido', 'Accesibilidad', 'Seguimiento', 'Satisfacción'],
+                    datasets: [{
+                        label: 'Evaluación',
+                        data: [76, 82, 88, 70, 79, 85],
+                        borderColor: '#347c83',
+                        backgroundColor: 'rgba(52, 124, 131, 0.2)',
+                        pointBackgroundColor: '#347c83'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false },
+                            grid: { color: 'rgba(35, 75, 99, 0.12)' },
+                            pointLabels: { color: '#203b4d', font: { size: 11 } }
+                        }
+                    },
+                    plugins: { legend: { position: 'bottom', labels: { color: '#203b4d' } } }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
